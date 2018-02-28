@@ -47,7 +47,7 @@ clone项目到你自己的开发目录下，然后将服务器(nginx/apache)的�
 然后，在浏览器访问 `http://yourdomain` 即可。
 
 
-![Alt text](/path/to/img.jpg)
+![Alt text](https://raw.githubusercontent.com/kccdzz/rxphp/master/data/png/web1.png)
 
 
 
