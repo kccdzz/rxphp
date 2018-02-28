@@ -56,7 +56,7 @@ clone项目到你自己的开发目录下，然后将服务器(nginx/apache)的�
 在`logic`目录创建`UserLogic.php`，
 在`model`目录创建`UserModel.php`，
 在`view`目录创建`User`目录，然后创建具体action的html文件。
-具体每隔文件的内容可以参考Index的Demo。
+具体每个文件的内容可以参考Index的Demo。
 如果要访问用户列表，使用：`http://yourdomain/index.php?c=User&a=index`,
 如果要添加用户，使用：`http://yourdomain/index.php?c=User&a=add`。
 
