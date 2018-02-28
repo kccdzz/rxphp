@@ -1,0 +1,47 @@
+<{include file="../template/header.html"}>
+
+<div>
+    当前位置：<{$title}>
+    <a href="<{$common.url}>index">返回商品列表</a>
+</div>
+
+<br>
+
+<!-- 表单 -->
+<form method="post" action="<{$common.url}>add_exec">
+<table>
+    <{if $info.id}>
+    <tr>
+        <th>商品ID：</th>
+        <td><{$info.id}></td>
+        <input type="hidden" name="id" value="<{$info.id}>" />
+    </tr>
+    <{/if}>
+
+    <tr>
+        <th>商品分类：</th>
+        <td><input type="text" name="type" placeholder="请输入商品分类" value="<{$info.type}>" /></td>
+    </tr>
+    <tr>
+        <th>商品名称：</th>
+        <td><input type="text" name="name" placeholder="请输入商品名称" value="<{$info.name}>" /></td>
+    </tr>
+    <tr>
+        <th>商品价格：</th>
+        <td><input type="text" name="price" placeholder="请输入商品价格" value="<{$info.price}>" /></td>
+    </tr>
+    <tr>
+        <th>商品库存：</th>
+        <td><input type="text" name="count" placeholder="请输入商品库存" value="<{$info.count}>" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="保存" /></td>
+    </tr>
+</table>
+</form>
+<!-- END 表单 -->
+
+
+
+<{include file="../template/footer.html"}>

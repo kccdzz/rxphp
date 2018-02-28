@@ -1,0 +1,77 @@
+<{include file="../template/header.html"}>
+
+<div>
+    当前位置：<{$title}>
+    <a href="<{$common.url}>index">全部数据</a> |
+    <a href="<{$common.url}>add">添加新数据</a>
+</div>
+
+
+<!-- 搜索 -->
+<div>
+    <form method="get" action="<{$common.host}>">
+        <input type="hidden" name="c" value="Index" />
+        <input type="hidden" name="a" value="index" />
+        <input type="text" name="id" placeholder="商品ID" value="<{$get.id}>" />
+        <input type="text" name="type" placeholder="商品类型" value="<{$get.type}>" />
+        <input type="text" name="name" placeholder="商品名称关键字" value="<{$get.name}>" />
+        <input type="submit" value="搜索" />
+    </form>
+</div>
+<!-- END 搜索 -->
+<br>
+
+<!-- 列表 -->
+<table border="1" rules="all">
+    <tr>
+        <th>序号</th>
+        <th>商品ID</th>
+        <th>商品分类</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>商品库存</th>
+        <th>添加时间</th>
+        <th>修改时间</th>
+        <th>操作</th>
+    </tr>
+
+  <{foreach $list as $k=>$v}>
+    <tr>
+        <td>[<{$k+1}>]</td>
+        <td><{$v.id}></td>
+        <td><{$v.type}></td>
+        <td><{$v.name}></td>
+        <td><{$v.price}></td>
+        <td><{$v.count}></td>
+        <td><{$v.create_time}></td>
+        <td><{$v.update_time}></td>
+        <td>
+            <a href="<{$common.url}>add&id=<{$v.id}>">编辑</a> |
+            <a href="<{$common.url}>del&id=<{$v.id}>" onclick="return confirm('是否确认删除？')">删除</a>
+        </td>
+    </tr>
+  <{/foreach}>
+</table>
+<!-- END 列表 -->
+
+
+<!-- 分页 -->
+<div>
+    第 <{$p.page}> 页,
+    共 <{$p.page_count}> 页,
+    总记录 <{$p.count}>,
+    每页显示 <{$p.page_size}> 条。
+</div>
+<div>
+    <a class="bgs" href="<{$common.url}>index&p=<{$p.front_page}>">上一页</a>
+    <{foreach $p.page_list as $pl}>
+    <a href="<{$common.url}>index&p=<{$pl}>"><{$pl}></a>
+    <{/foreach}>
+    <a href="<{$common.url}>index&p=<{$p.next_page}>">下一页</a>
+</div>
+<!-- END 分页 -->
+
+
+
+
+<{include file="../template/footer.html"}>
